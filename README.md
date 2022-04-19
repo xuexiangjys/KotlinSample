@@ -14,6 +14,7 @@ Kotlin相关的案例
 * [Kotlin 里那些「不是那么写的」](https://juejin.cn/post/6844903920536551431)
 * [Kotlin 的协程用力瞥一眼](https://juejin.cn/post/6844903949686800392)
 * [万字长文 - Kotlin 协程进阶](https://juejin.cn/post/6950616789390721037)
+* [Kotlin Coroutines Flow 系列(二) Flow VS RxJava2](https://juejin.cn/post/6844904057534939149)
 
 ## 如果觉得项目还不错，可以考虑打赏一波
 

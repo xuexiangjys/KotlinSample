@@ -24,7 +24,8 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
 /**
- * Flow必须在协程的环境下方可使用
+ * flow 的代码块只有调用 collected() 才开始运行，正如 RxJava 创建的 Observables 只有调用 subscribe() 才开始运行一样。
+ * 因此，flow必须在协程的环境下方可使用
  */
 @Page(name = "协程Flow的使用")
 class CoroutinesFlowFragment : BaseSimpleListFragment() {
