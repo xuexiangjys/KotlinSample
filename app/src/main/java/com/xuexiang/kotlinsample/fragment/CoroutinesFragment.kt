@@ -18,6 +18,7 @@ package com.xuexiang.kotlinsample.fragment
 
 import com.xuexiang.kotlinsample.core.BaseContainerFragment
 import com.xuexiang.kotlinsample.fragment.coroutines.CoroutinesBasicFragment
+import com.xuexiang.kotlinsample.fragment.coroutines.CoroutinesFlowFragment
 import com.xuexiang.kotlinsample.fragment.coroutines.SchedulerChangeFragment
 import com.xuexiang.xpage.annotation.Page
 
@@ -33,7 +34,8 @@ class CoroutinesFragment : BaseContainerFragment() {
     override fun getPagesClasses(): Array<Class<*>> {
         return arrayOf(
             CoroutinesBasicFragment::class.java,
-            SchedulerChangeFragment::class.java
+            SchedulerChangeFragment::class.java,
+            CoroutinesFlowFragment::class.java
         )
     }
 }
