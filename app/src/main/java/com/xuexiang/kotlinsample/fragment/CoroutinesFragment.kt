@@ -16,12 +16,10 @@
  */
 package com.xuexiang.kotlinsample.fragment
 
-import android.util.Log
-import com.xuexiang.kotlinsample.core.BaseSimpleListFragment
+import com.xuexiang.kotlinsample.core.BaseContainerFragment
+import com.xuexiang.kotlinsample.fragment.coroutines.CoroutinesBasicFragment
+import com.xuexiang.kotlinsample.fragment.coroutines.SchedulerChangeFragment
 import com.xuexiang.xpage.annotation.Page
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 /**
  * 协程使用
@@ -30,34 +28,12 @@ import kotlinx.coroutines.launch
  * @since 2022/3/25 1:42 上午
  */
 @Page(name = "协程使用")
-class CoroutinesFragment : BaseSimpleListFragment() {
+class CoroutinesFragment : BaseContainerFragment() {
 
-    private val TAG = "CoroutinesFragment"
-
-    override fun initSimpleData(lists: MutableList<String>): MutableList<String> {
-        lists.add("简单使用")
-        return lists
+    override fun getPagesClasses(): Array<Class<*>> {
+        return arrayOf(
+            CoroutinesBasicFragment::class.java,
+            SchedulerChangeFragment::class.java
+        )
     }
-
-    override fun onItemClick(position: Int) {
-        when (position) {
-            0 -> {
-                GlobalScope.launch {
-                    val result = doCoroutines()
-                    Log.e(TAG, "${result},当前线程：${Thread.currentThread().name}")
-                }
-            }
-            else -> {
-
-            }
-        }
-    }
-
-    private suspend fun doCoroutines(): String {
-        //暂停两秒，模拟耗时操作
-        delay(2000L)
-        Log.e(TAG, "doCoroutines完成,当前线程：${Thread.currentThread().name}")
-        return "成功执行doCoroutines"
-    }
-
 }
