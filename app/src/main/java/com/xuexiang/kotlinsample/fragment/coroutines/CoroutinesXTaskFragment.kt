@@ -14,13 +14,13 @@
  * limitations under the License.
  *
  */
-package com.xuexiang.kotlinsample.fragment
+package com.xuexiang.kotlinsample.fragment.coroutines
 
 import com.xuexiang.kotlinsample.core.BaseContainerFragment
 import com.xuexiang.kotlinsample.fragment.coroutines.CoroutinesBasicFragment
 import com.xuexiang.kotlinsample.fragment.coroutines.CoroutinesFlowFragment
-import com.xuexiang.kotlinsample.fragment.coroutines.CoroutinesXTaskFragment
 import com.xuexiang.kotlinsample.fragment.coroutines.SchedulerChangeFragment
+import com.xuexiang.kotlinsample.fragment.coroutines.business.ComplexBusinessFragment
 import com.xuexiang.xpage.annotation.Page
 
 /**
@@ -29,15 +29,12 @@ import com.xuexiang.xpage.annotation.Page
  * @author xuexiang
  * @since 2022/3/25 1:42 上午
  */
-@Page(name = "协程使用")
-class CoroutinesFragment : BaseContainerFragment() {
+@Page(name = "协程和XTask使用对比")
+class CoroutinesXTaskFragment : BaseContainerFragment() {
 
     override fun getPagesClasses(): Array<Class<*>> {
         return arrayOf(
-            CoroutinesBasicFragment::class.java,
-            SchedulerChangeFragment::class.java,
-            CoroutinesFlowFragment::class.java,
-            CoroutinesXTaskFragment::class.java
+            ComplexBusinessFragment::class.java,
         )
     }
 }

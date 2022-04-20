@@ -108,6 +108,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
 
+    // XTask
+    implementation 'com.github.xuexiangjys.XTask:xtask-core:1.0.2'
+
     implementation deps.androidx.multidex
     //屏幕适配AutoSize
     implementation 'me.jessyan:autosize:1.2.1'

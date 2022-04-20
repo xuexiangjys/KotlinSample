@@ -19,8 +19,9 @@ package com.xuexiang.kotlinsample
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
-import com.xuexiang.kotlinsample.utils.sdkinit.XBasicLibInit
 import com.xuexiang.kotlinsample.utils.sdkinit.UMengInit
+import com.xuexiang.kotlinsample.utils.sdkinit.XBasicLibInit
+import com.xuexiang.xtask.XTask
 
 /**
  * @author xuexiang
@@ -36,6 +37,9 @@ class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
         initLibs()
+
+        // 设置XTask的调试模式
+        XTask.debug(isDebug)
     }
 
     /**
