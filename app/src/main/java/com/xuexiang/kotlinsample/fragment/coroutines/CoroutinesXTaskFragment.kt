@@ -17,10 +17,8 @@
 package com.xuexiang.kotlinsample.fragment.coroutines
 
 import com.xuexiang.kotlinsample.core.BaseContainerFragment
-import com.xuexiang.kotlinsample.fragment.coroutines.CoroutinesBasicFragment
-import com.xuexiang.kotlinsample.fragment.coroutines.CoroutinesFlowFragment
-import com.xuexiang.kotlinsample.fragment.coroutines.SchedulerChangeFragment
 import com.xuexiang.kotlinsample.fragment.coroutines.business.ComplexBusinessFragment
+import com.xuexiang.kotlinsample.fragment.coroutines.concurrent.ConcurrentProcessFragment
 import com.xuexiang.xpage.annotation.Page
 
 /**
@@ -35,6 +33,7 @@ class CoroutinesXTaskFragment : BaseContainerFragment() {
     override fun getPagesClasses(): Array<Class<*>> {
         return arrayOf(
             ComplexBusinessFragment::class.java,
+            ConcurrentProcessFragment::class.java
         )
     }
 }
