@@ -14,17 +14,29 @@
  * limitations under the License.
  *
  */
-package com.xuexiang.kotlinsample.fragment.coroutines.business.entity
 
-/**
- * 产品工厂
- *
- * @author xuexiang
- * @since 2/25/22 1:15 AM
- */
-class ProductFactory(var id: String, var address: String) {
+package com.xuexiang.kotlinsample.fragment.basic
 
-    fun produce(info: ProductInfo?): Product {
-        return Product(info!!, address)
+import com.xuexiang.kotlinsample.core.BaseSimpleListFragment
+import com.xuexiang.xpage.annotation.Page
+
+@Page
+class BasicStringFragment : BaseSimpleListFragment() {
+
+    override fun initSimpleData(lists: MutableList<String>): MutableList<String> {
+        lists.add("")
+        lists.add("")
+        return lists
+    }
+
+    override fun onItemClick(position: Int) {
+        when(position) {
+            0 -> {
+
+            }
+            1-> {
+
+            }
+        }
     }
 }

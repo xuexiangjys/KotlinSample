@@ -107,6 +107,15 @@ class CoroutinesBasicFragment : BaseSimpleListFragment() {
         "成功执行doCoroutineScope"
     }
 
+    private suspend fun doSupervisorScope() = supervisorScope {
+        //暂停两秒，模拟耗时操作
+        delay(1000L)
+        withContext(Dispatchers.Main) {
+            Log.e(TAG, "doSupervisorScope完成, 当前线程：${Thread.currentThread().name}")
+        }
+        "成功执行doSupervisorScope"
+    }
+
     override fun onDestroyView() {
         job?.cancel()
         lazyJob?.cancel()
