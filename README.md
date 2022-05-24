@@ -6,7 +6,7 @@ Kotlin相关的案例
 
 | 公众号   | 掘金     |  知乎    |  CSDN   |   简书   |   思否  |   哔哩哔哩  |   今日头条
 |---------|---------|--------- |---------|---------|---------|---------|---------|
-| [我的Android开源之旅](https://ss.im5i.com/2021/06/14/6tqAU.png)  |  [点我](https://juejin.im/user/598feef55188257d592e56ed/posts)    |   [点我](https://www.zhihu.com/people/xuexiangjys/posts)       |   [点我](https://xuexiangjys.blog.csdn.net/)  |   [点我](https://www.jianshu.com/u/6bf605575337)  |   [点我](https://segmentfault.com/u/xuexiangjys)  |   [点我](https://space.bilibili.com/483850585)  |   [点我](https://img.rruu.net/image/5ff34ff7b02dd)
+| [我的Android开源之旅](https://t.1yb.co/Irse)  |  [点我](https://juejin.im/user/598feef55188257d592e56ed/posts)    |   [点我](https://www.zhihu.com/people/xuexiangjys/posts)       |   [点我](https://xuexiangjys.blog.csdn.net/)  |   [点我](https://www.jianshu.com/u/6bf605575337)  |   [点我](https://segmentfault.com/u/xuexiangjys)  |   [点我](https://space.bilibili.com/483850585)  |   [点我](https://img.rruu.net/image/5ff34ff7b02dd)
 
 ----
 
@@ -73,6 +73,28 @@ implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
 
 ----
 
+## Kotlin语法
+
+### let、with、run、apply、also等作用域函数
+
+函数	| 函数块对象引用   | 返回值	| 是否拓展函数    | 使用场景
+|---|---|---|---|---
+let	| it | Lambda表达式结果	| 是	| 1.适用于处理不为null的操作场景；2.明确一个变量所处的特定作用域范围内可使用。
+with| this	| Lambda表达式结果	| 否(上下文对象作为参数)	| 适用于同一个对象的公有属性和函数调用。
+run	| this	| Lambda表达式结果	| 是	| 适用于let函数和with函数的任何场景。对对象中的属性进行赋值和计算结果；在需要表达式的地方运行语句。
+apply	| this	| 返回this(对象本身)	| 是 | 1.一般用于对象实例初始化的时候，需要对对象中的属性进行赋值；2.动态inflate一个View的时候需要给View绑定数据。
+also| it| 返回this(对象本身) | 是 | 适用于let函数的任何场景，对传入的对象进行操作，一般用于多个拓展函数的链式调用。
+
+1.`let`函数一般统一做空判断处理。
+2.`with`函数在同一个对象的多个方法时，可以省去类名重复。
+3.`run`函数适用于`let`函数和`with`函数的任何场景。`run`=`let`+`with`。
+4.`apply`函数整体上和`run`函数相似，唯一不同就是它的返回值是对象本身。
+5.`also`适用于`let`函数的任何场景，唯一不同就是它的返回值是对象本身。
+
+
+----
+
+
 ## 相关文章
 
 * [Kotlin 的变量、函数和类型](https://juejin.cn/post/6844903918888026126)
@@ -81,6 +103,7 @@ implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
 * [万字长文 - Kotlin 协程进阶](https://juejin.cn/post/6950616789390721037)
 * [Kotlin Coroutines Flow 系列(二) Flow VS RxJava2](https://juejin.cn/post/6844904057534939149)
 * [Kotlin 协程实战进阶](https://blog.csdn.net/m0_37796683/article/details/119424009)
+* [Kotlin系列文章](https://blog.csdn.net/m0_37796683/category_10088599.html)
 
 ## 如果觉得项目还不错，可以考虑打赏一波
 

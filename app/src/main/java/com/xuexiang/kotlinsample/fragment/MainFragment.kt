@@ -30,7 +30,8 @@ import com.xuexiang.xutil.common.ClickUtils.OnClick2ExitListener
 class MainFragment : BaseContainerFragment(), OnClick2ExitListener {
     override fun getPagesClasses(): Array<Class<*>> {
         return arrayOf( //此处填写fragment
-                CoroutinesFragment::class.java
+            CoroutinesFragment::class.java,
+            KotlinBasicFragment::class.java
         )
     }
 
