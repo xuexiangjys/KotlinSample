@@ -36,11 +36,11 @@ class ScopeFunctionFragment : BaseSimpleListFragment() {
     private val productInfo = ProductInfo("9587", "格力空调", "优质")
 
     override fun initSimpleData(lists: MutableList<String>): MutableList<String> {
-        lists.add("let函数")
-        lists.add("with函数")
-        lists.add("run函数")
-        lists.add("apply函数")
-        lists.add("also函数")
+        lists.add("【let】函数一般统一做空判断处理")
+        lists.add("【with】函数在同一个对象的多个方法时，可以省去类名重复")
+        lists.add("【run】函数适用于`let`函数和`with`函数的任何场景。`run`=`let`+`with`")
+        lists.add("【apply】函数整体上和`run`函数相似，唯一不同就是它的返回值是对象本身")
+        lists.add("【also】适用于`let`函数的任何场景，唯一不同就是它的返回值是对象本身")
         return lists
     }
 

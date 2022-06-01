@@ -17,26 +17,23 @@
 
 package com.xuexiang.kotlinsample.fragment.basic
 
-import com.xuexiang.kotlinsample.core.BaseSimpleListFragment
+import com.xuexiang.kotlinsample.core.BaseContainerFragment
+import com.xuexiang.kotlinsample.fragment.basic.simplify.StringFragment
 import com.xuexiang.xpage.annotation.Page
 
-@Page
-class BasicStringFragment : BaseSimpleListFragment() {
+/**
+ * Kotlin中更加方便的写法：https://juejin.cn/post/6844903923061358605
+ *
+ *
+ * @author xuexiang
+ * @since 2022/5/28 1:51 上午
+ */
+@Page(name = "Kotlin中常见的便捷使用")
+class SimplifyUseFragment : BaseContainerFragment() {
 
-    override fun initSimpleData(lists: MutableList<String>): MutableList<String> {
-        lists.add("")
-        lists.add("")
-        return lists
-    }
-
-    override fun onItemClick(position: Int) {
-        when(position) {
-            0 -> {
-
-            }
-            1-> {
-
-            }
-        }
+    override fun getPagesClasses(): Array<Class<*>> {
+        return arrayOf(
+            StringFragment::class.java,
+        )
     }
 }
