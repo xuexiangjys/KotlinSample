@@ -22,56 +22,48 @@ import com.xuexiang.kotlinsample.core.BaseSimpleListFragment
 import com.xuexiang.xpage.annotation.Page
 
 /**
- * 字符串
+ * 条件判断
  *
  * @author xuexiang
- * @since 2022/5/28 1:54 上午
+ * @since 2022/6/14 12:51 上午
  */
-@Page(name = "字符串")
-class StringFragment : BaseSimpleListFragment() {
+@Page(name = "条件判断")
+class ConditionalFragment : BaseSimpleListFragment() {
 
-    private val TAG = "Kotlin-String"
+    private val TAG = "Kotlin-Conditional"
 
     override fun initSimpleData(lists: MutableList<String>): MutableList<String> {
-        lists.add("字符串模板")
-        lists.add("原生字符串")
-        lists.add("trimMargin方法")
+        lists.add("kotlin中 if/else 代替三元运算符")
+        lists.add("for循环使用in")
+        lists.add("?. 和 ?:")
         return lists
     }
 
     override fun onItemClick(position: Int) {
         when(position) {
-            0 -> stringFormatTest()
-            1-> rawStringTest()
-            2-> trimMarginTest()
+            0 -> ifElseTest()
+            1-> forTest()
+            2-> nullSafeTest(null)
         }
     }
 
-    private fun stringFormatTest() {
-        val name = "xuexiangjys"
-        Log.e(TAG, "the length of $name is ${name.length}")
+    private fun ifElseTest() {
+        val a = 10
+        val b = 20
+        // 等价于 max = a > b ? a : b
+        val max = if (a > b) a else b
     }
 
-    private fun rawStringTest() {
-        val string = """    xuexiang  \n  
-            |   ~~ 35 \?'
-        """
-        Log.e(TAG, string)
+    private fun forTest() {
+        val array = intArrayOf(1, 2, 3, 4)
+        for (item in array) {
+            Log.e(TAG, "for $item")
+        }
     }
 
-
-    private fun trimMarginTest() {
-        val string1 = """    xuexiang  \n  
-                |   ~~ 35 \?'
-            ?11112234  
-        """.trimMargin()
-        Log.e(TAG, string1)
-
-        val string2 = """    xuexiang  \n  
-                |   ~~ 35 \?'
-            ?11112234  
-        """.trimMargin("?")
-        Log.e(TAG, string2)
+    private fun nullSafeTest(str: String?) {
+        // 如果左侧表达式 str?.length 结果为空，则返回右侧的值 -1。
+        val length = str?.length ?: -1
     }
 
 }

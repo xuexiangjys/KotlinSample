@@ -18,6 +18,8 @@
 package com.xuexiang.kotlinsample.fragment.basic
 
 import com.xuexiang.kotlinsample.core.BaseContainerFragment
+import com.xuexiang.kotlinsample.fragment.basic.simplify.ArrayFragment
+import com.xuexiang.kotlinsample.fragment.basic.simplify.ConditionalFragment
 import com.xuexiang.kotlinsample.fragment.basic.simplify.StringFragment
 import com.xuexiang.xpage.annotation.Page
 
@@ -34,6 +36,8 @@ class SimplifyUseFragment : BaseContainerFragment() {
     override fun getPagesClasses(): Array<Class<*>> {
         return arrayOf(
             StringFragment::class.java,
+            ArrayFragment::class.java,
+            ConditionalFragment::class.java
         )
     }
 }

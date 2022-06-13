@@ -99,6 +99,7 @@ also| it| 返回this(对象本身) | 是 | 适用于let函数的任何场景，�
 * [Kotlin 的变量、函数和类型](https://juejin.cn/post/6844903918888026126)
 * [Kotlin 里那些「不是那么写的」](https://juejin.cn/post/6844903920536551431)
 * [Kotlin 的协程用力瞥一眼](https://juejin.cn/post/6844903949686800392)
+* [Kotlin 里那些「更方便的」](https://juejin.cn/post/6844903923061358605)
 * [万字长文 - Kotlin 协程进阶](https://juejin.cn/post/6950616789390721037)
 * [Kotlin Coroutines Flow 系列(二) Flow VS RxJava2](https://juejin.cn/post/6844904057534939149)
 * [Kotlin 协程实战进阶](https://blog.csdn.net/m0_37796683/article/details/119424009)
