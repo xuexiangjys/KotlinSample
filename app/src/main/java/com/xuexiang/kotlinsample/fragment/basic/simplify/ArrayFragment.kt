@@ -40,6 +40,10 @@ class ArrayFragment : BaseSimpleListFragment() {
         lists.add("flatMap：变换、创建、合并")
         lists.add("Range：区间范围")
         lists.add("Sequence：惰性集合操作")
+        lists.add("find：寻找第一个符合要求的内容")
+        lists.add("any：判断是否存在符合要求的内容")
+        lists.add("count：获取符合要求内容的数量")
+        lists.add("maxBy：获取最大的内容")
         return lists
     }
 
@@ -52,6 +56,10 @@ class ArrayFragment : BaseSimpleListFragment() {
             4 -> listFlatMap()
             5 -> rangeTest()
             6 -> sequenceTest()
+            7 -> findTest()
+            8 -> anyTest()
+            9 -> countTest()
+            10 -> maxByTest()
         }
     }
 
@@ -167,6 +175,38 @@ class ArrayFragment : BaseSimpleListFragment() {
                 i % 3 == 0
             }
         Log.e(TAG, "result: ${result.first()}") // 👈 只取集合的第一个元素
+    }
+
+    private fun findTest() {
+        val list = listOf(1, 2, 3, 4)
+        val result = list.find {
+            it > 2
+        }
+        Log.e(TAG, "find: $result")
+    }
+
+    private fun anyTest() {
+        val list = listOf(1, 2, 3, 4)
+        val result = list.any {
+            it > 2
+        }
+        Log.e(TAG, "any: $result")
+    }
+
+    private fun countTest() {
+        val list = listOf(1, 2, 3, 4)
+        val result = list.count {
+            it > 2
+        }
+        Log.e(TAG, "count: $result")
+    }
+
+    private fun maxByTest() {
+        val list = listOf(1, 2, 3, 4)
+        val result = list.maxByOrNull {
+            it
+        }
+        Log.e(TAG, "maxBy: $result")
     }
 
     companion object {
