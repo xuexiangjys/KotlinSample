@@ -87,6 +87,7 @@ class VariableFragment : BaseSimpleListFragment() {
         lists.add("const：修饰val变量，代表常量")
         lists.add("field的getter/setter函数")
         lists.add("类型的判断和强转")
+        lists.add("可变数量的参数vararg")
         return lists
     }
 
@@ -105,6 +106,9 @@ class VariableFragment : BaseSimpleListFragment() {
                 Log.e(TAG, getTypeName(listOf(1, 2, 3, 4)))
                 Log.e(TAG, getSomething("hahaha").toString())
             }
+            9 -> {
+                logTxt("a", "b", "c")
+            }
         }
     }
 
@@ -119,5 +123,12 @@ class VariableFragment : BaseSimpleListFragment() {
 
     private fun getSomething(any: Any) =
         (any as? ProductInfo)?.brand
+
+
+    private fun logTxt(vararg value: String) {
+        value.forEachIndexed { index, item ->
+            Log.e(TAG, "$index - $item")
+        }
+    }
 
 }

@@ -17,6 +17,7 @@
 package com.xuexiang.kotlinsample.fragment
 
 import com.xuexiang.kotlinsample.core.BaseContainerFragment
+import com.xuexiang.kotlinsample.fragment.basic.BitOperationFragment
 import com.xuexiang.kotlinsample.fragment.basic.ScopeFunctionFragment
 import com.xuexiang.kotlinsample.fragment.basic.SimplifyUseFragment
 import com.xuexiang.kotlinsample.fragment.basic.VariableFragment
@@ -35,6 +36,7 @@ class KotlinBasicFragment : BaseContainerFragment() {
         return arrayOf(
             ScopeFunctionFragment::class.java,
             VariableFragment::class.java,
+            BitOperationFragment::class.java,
             SimplifyUseFragment::class.java,
         )
     }
