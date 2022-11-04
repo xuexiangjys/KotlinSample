@@ -57,6 +57,7 @@ class BitOperationFragment : BaseSimpleListFragment() {
         val b = 10
         // 0010 -> 2
         Log.e(TAG, "2&10 = ${a.and(b)}")
+        Log.e(TAG, "2&10 = ${a and b}")
     }
 
     private fun orTest() {
@@ -66,6 +67,7 @@ class BitOperationFragment : BaseSimpleListFragment() {
         val b = 9
         // 1011 -> 11
         Log.e(TAG, "2|9 = ${a.or(b)}")
+        Log.e(TAG, "2|9 = ${a or b}")
     }
 
     private fun shlTest() {
@@ -74,6 +76,7 @@ class BitOperationFragment : BaseSimpleListFragment() {
         val b = 4
         // 100000 -> 32
         Log.e(TAG, "2<<4 = ${a.shl(b)}")
+        Log.e(TAG, "2<<4 = ${a shl b}")
     }
 
     private fun shrTest() {
@@ -82,6 +85,7 @@ class BitOperationFragment : BaseSimpleListFragment() {
         val b = 3
         // 1000 -> 8
         Log.e(TAG, "64>>3 = ${a.shr(b)}")
+        Log.e(TAG, "64>>3 = ${a shr b}")
     }
 
 }

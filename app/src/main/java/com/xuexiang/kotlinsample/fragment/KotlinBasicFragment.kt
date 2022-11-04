@@ -17,10 +17,7 @@
 package com.xuexiang.kotlinsample.fragment
 
 import com.xuexiang.kotlinsample.core.BaseContainerFragment
-import com.xuexiang.kotlinsample.fragment.basic.BitOperationFragment
-import com.xuexiang.kotlinsample.fragment.basic.ScopeFunctionFragment
-import com.xuexiang.kotlinsample.fragment.basic.SimplifyUseFragment
-import com.xuexiang.kotlinsample.fragment.basic.VariableFragment
+import com.xuexiang.kotlinsample.fragment.basic.*
 import com.xuexiang.xpage.annotation.Page
 
 /**
@@ -38,6 +35,7 @@ class KotlinBasicFragment : BaseContainerFragment() {
             VariableFragment::class.java,
             BitOperationFragment::class.java,
             SimplifyUseFragment::class.java,
+            LoopControlFragment::class.java
         )
     }
 }
