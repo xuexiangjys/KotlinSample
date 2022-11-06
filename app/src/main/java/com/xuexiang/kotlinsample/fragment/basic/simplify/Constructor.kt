@@ -43,10 +43,26 @@ class User2 constructor(var name: String) {
 
 class User3 {
     var name: String = ""
-    var age: Int = 0
+    private var age: Int = 0
+        get() = field * 3
+        set(value) {
+            field = value
+            name = "${field}岁的人"
+        }
 
     constructor(name: String, age: Int) {
         this.name = name
         this.age = age
+    }
+
+
+}
+
+/**
+ * Kotlin 的 data class 默认提供了一种对象拷贝的方式 , 即 data class 类会生成 copy() 方法, 类似java.lang.Object 的 clone() 方法，这是一种浅拷贝
+ */
+data class Person(var name: String, var age: Int, var phone: String) {
+    override fun toString(): String {
+        return "Person(name='$name', age=$age, phone='$phone')"
     }
 }

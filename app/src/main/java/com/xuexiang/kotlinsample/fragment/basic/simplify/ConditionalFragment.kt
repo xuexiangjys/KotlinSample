@@ -35,17 +35,20 @@ class ConditionalFragment : BaseSimpleListFragment() {
     override fun initSimpleData(lists: MutableList<String>): MutableList<String> {
         lists.add("kotlin中 if/else 代替三元运算符")
         lists.add("for循环使用in")
+        lists.add("for循环..和until的区别")
         lists.add("?. 和 ?:")
         return lists
     }
 
     override fun onItemClick(position: Int) {
-        when(position) {
+        when (position) {
             0 -> ifElseTest()
-            1-> forTest()
-            2-> nullSafeTest(null)
+            1 -> forInTest()
+            2 -> forUntilTest()
+            3 -> nullSafeTest(null)
         }
     }
+
 
     private fun ifElseTest() {
         val a = 10
@@ -54,11 +57,30 @@ class ConditionalFragment : BaseSimpleListFragment() {
         val max = if (a > b) a else b
     }
 
-    private fun forTest() {
+    private fun forInTest() {
         val array = intArrayOf(1, 2, 3, 4)
         for (item in array) {
             Log.e(TAG, "for $item")
         }
+    }
+
+    /**
+     * 这里的 1..5 表示从 1 到 5，且包括 5，这就是开区间 [1, 5]
+     * 这里的 1 until 5 表示从 1 到 5，但不包括 5，这就是半开区间 [1, 5)s
+     */
+    private fun forUntilTest() {
+        // 循环5次，步长为1的递增
+        for (i in 1..5) {
+            Log.e(TAG, "in $i")
+        }
+        // 1 2 3 4 5
+
+
+        // 循环4次，步长为1的递增
+        for (i in 1 until 5) {
+            Log.e(TAG, "until $i")
+        }
+        // 1 2 3 4
     }
 
     private fun nullSafeTest(str: String?) {

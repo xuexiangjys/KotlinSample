@@ -19,6 +19,7 @@ package com.xuexiang.kotlinsample.fragment.basic
 
 import android.util.Log
 import com.xuexiang.kotlinsample.core.BaseSimpleListFragment
+import com.xuexiang.kotlinsample.fragment.basic.simplify.Person
 import com.xuexiang.kotlinsample.fragment.coroutines.business.entity.ProductInfo
 import com.xuexiang.xpage.annotation.Page
 
@@ -88,6 +89,7 @@ class VariableFragment : BaseSimpleListFragment() {
         lists.add("field的getter/setter函数")
         lists.add("类型的判断和强转")
         lists.add("可变数量的参数vararg")
+        lists.add("使用data class的copy()函数进行对象浅拷贝")
         return lists
     }
 
@@ -108,6 +110,12 @@ class VariableFragment : BaseSimpleListFragment() {
             }
             9 -> {
                 logTxt("a", "b", "c")
+            }
+            10 -> {
+                val userA = Person("张三", 29, "12341243543SS")
+                val userB = userA.copy(name = "李四")
+                Log.e(TAG, "$userA")
+                Log.e(TAG, "$userB")
             }
         }
     }
