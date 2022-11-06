@@ -99,9 +99,10 @@ dependencies {
     androidTestImplementation deps.espresso.core
 
     implementation 'androidx.core:core-ktx:1.7.0'
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.7.20"
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
 
     // lifecycle对于协程的扩展封装
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"

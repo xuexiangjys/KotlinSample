@@ -35,7 +35,8 @@ class KotlinBasicFragment : BaseContainerFragment() {
             VariableFragment::class.java,
             BitOperationFragment::class.java,
             SimplifyUseFragment::class.java,
-            LoopControlFragment::class.java
+            LoopControlFragment::class.java,
+            ReflectFragment::class.java
         )
     }
 }
