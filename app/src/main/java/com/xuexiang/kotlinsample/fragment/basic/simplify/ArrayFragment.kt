@@ -68,6 +68,7 @@ class ArrayFragment : BaseSimpleListFragment() {
         val intArray = intArrayOf(1, 2, 3)
         // 集合
         val intList = listOf(1, 2, 3)
+        val intSet = setOf(4, 5, 4, 6, 7, 5)
         // 可变集合
         val mutableList = mutableListOf(1, 2, 3)
         mutableList.add(4)
@@ -78,6 +79,7 @@ class ArrayFragment : BaseSimpleListFragment() {
         )
         Log.e(TAG, "intArray $intArray")
         Log.e(TAG, "intList $intList")
+        Log.e(TAG, "intSet $intSet")
         Log.e(TAG, "mutableList $mutableList")
         Log.e(TAG, "mutableMap $mutableMap")
     }
@@ -89,7 +91,7 @@ class ArrayFragment : BaseSimpleListFragment() {
     }
 
     /**
-     * 遍历每个元素并执行给定表达式，最终形成新的集合
+     * 遍历每个元素并按给的条件进行过滤，最终形成新的集合
      *
      * 结果：[4, 8]
      */

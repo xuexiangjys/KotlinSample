@@ -113,6 +113,143 @@ also| it| 返回this(对象本身) | 是 | 适用于let函数的任何场景，�
 * 左移: shl(bits) == <<
 * 右移: shr(bits) == >>
 
+### 数组和集合操作
+
+* 1.数组集合的创建
+
+```kotlin
+// 数组
+val intArray = intArrayOf(1, 2, 3)
+// 集合
+val intList = listOf(1, 2, 3)
+val intSet = setOf(4, 5, 4, 6, 7, 5)
+// 可变集合
+val mutableList = mutableListOf(1, 2, 3)
+mutableList.add(4)
+val mutableMap = mutableMapOf(
+    1 to "1",
+    2 to "2",
+    3 to "3"
+)
+```
+
+* 2.forEach：遍历
+
+```kotlin
+intArrayOf(1, 2, 3).forEach { i ->
+  Log.e(TAG, "遍历：$i")
+}
+```
+
+* 3.filter：过滤
+
+```kotlin
+// 遍历每个元素并按给的条件进行过滤，最终形成新的集合
+// 结果：[4, 8]
+intArrayOf(1, 2, 3, 4, 8).filter { i -> i > 3 }
+```
+
+* 4.map：变换、
+
+```kotlin
+// 遍历每个元素并执行给定表达式，最终形成新的集合
+// 结果：[3, 6, 9]
+intArrayOf(1, 2, 3).map { i -> i * 3 }
+```
+
+* 5.flatMap：变换、创建、合并
+
+```kotlin
+// 遍历每个元素，并为每个元素创建新的集合，最后合并到一个集合中
+// 结果：[3, 6, 9]
+intArrayOf(1, 2, 3).flatMap { i ->
+    listOf("${i * 3}", "a") // 👈 生成新集合
+}
+```
+
+* 6.find：寻找第一个符合要求的内容
+
+```kotlin
+listOf(1, 2, 3, 4).find { it > 2 }
+```
+
+* 7.any：判断是否存在符合要求的内容
+
+```kotlin
+listOf(1, 2, 3, 4).any { it > 2 }
+```
+
+* 8.count：获取符合要求内容的数量
+
+```kotlin
+listOf(1, 2, 3, 4).count { it > 2 }
+```
+
+* 9.maxBy：获取最大的内容
+
+```kotlin
+listOf(1, 2, 3, 4).maxByOrNull { it }
+```
+
+### 反射使用
+
+* 1.反射设置/获取某个对象的成员属性: xx.javaClass.getDeclaredField("xx")
+
+```kotlin
+student.javaClass.getDeclaredField("Name").run {
+  isAccessible = true
+  // 设置
+  set(student, "xuexiang") 
+  // 获取
+  get(student)
+}
+```
+
+* 2.反射设置/获取某个对象的静态属性: xx::class.java.getDeclaredField("xx")
+
+```kotlin
+Student::class.java.getDeclaredField("TotalNumber").run {
+  isAccessible = true
+  // 设置
+  set(null, 1111)
+  // 获取
+  get(null)
+}
+```
+
+* 3.反射执行某对象的成员方法: xx.javaClass.getDeclaredMethod(xx, xx::class.java)
+
+```kotlin
+student.javaClass.getDeclaredMethod("getName", Integer::class.java).run {
+  isAccessible = true
+  Log.e(TAG, "invokeMethod: ${invoke(student, 23)}")
+}
+```
+
+* 4.反射执行某个类的静态方法: xx::class.java.getDeclaredMethod(xx, xx::class.java)
+
+```kotlin
+Student::class.java.getDeclaredMethod("incrementTotalNumber", Int::class.java).run {
+  isAccessible = true
+  Log.e(TAG, "invokeStaticMethod: ${invoke(null, 23)}")
+}
+```
+
+* 5.反射构建实例: xx::class.java.getDeclaredConstructor(xx::class.java...)
+
+```kotlin
+Student::class.java.getDeclaredConstructor(Int::class.java, String::class.java).run {
+  isAccessible = true
+  val std = newInstance(666, "xiaohuang")
+  Log.e(TAG, "newInstance: $std")
+  
+  GoodStudent::class.java.getDeclaredConstructor(Student::class.java).run {
+    isAccessible = true
+    val goodStd = newInstance(std)
+    Log.e(TAG, "GoodStudent: $goodStd")
+  }
+}
+```
 
 ----
 

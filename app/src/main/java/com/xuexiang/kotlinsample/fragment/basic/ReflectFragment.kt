@@ -24,8 +24,11 @@ import com.xuexiang.kotlinsample.fragment.basic.reflect.Student
 import com.xuexiang.xpage.annotation.Page
 
 /**
- * 1.反射设置属性
- * 2.
+ * 1.反射设置/获取某个对象的成员属性
+ * 2.反射设置/获取某个对象的静态属性
+ * 3.反射执行某对象的成员方法
+ * 4.反射执行某个类的静态方法
+ * 5.反射构建实例
  *
  * @author xuexiang
  * @since 2022/11/6 16:05
