@@ -193,7 +193,9 @@ listOf(1, 2, 3, 4).maxByOrNull { it }
 
 ### 反射使用
 
-* 1.反射设置/获取某个对象的成员属性: xx.javaClass.getDeclaredField("xx")
+* 1.反射设置/获取某个对象的成员属性: 
+
+**xx.javaClass.getDeclaredField("xx")**
 
 ```kotlin
 student.javaClass.getDeclaredField("Name").run {
@@ -205,7 +207,9 @@ student.javaClass.getDeclaredField("Name").run {
 }
 ```
 
-* 2.反射设置/获取某个对象的静态属性: xx::class.java.getDeclaredField("xx")
+* 2.反射设置/获取某个对象的静态属性: 
+
+**xx::class.java.getDeclaredField("xx")**
 
 ```kotlin
 Student::class.java.getDeclaredField("TotalNumber").run {
@@ -217,7 +221,9 @@ Student::class.java.getDeclaredField("TotalNumber").run {
 }
 ```
 
-* 3.反射执行某对象的成员方法: xx.javaClass.getDeclaredMethod(xx, xx::class.java)
+* 3.反射执行某对象的成员方法: 
+
+**xx.javaClass.getDeclaredMethod(xx, xx::class.java)**
 
 ```kotlin
 student.javaClass.getDeclaredMethod("getName", Integer::class.java).run {
@@ -226,7 +232,9 @@ student.javaClass.getDeclaredMethod("getName", Integer::class.java).run {
 }
 ```
 
-* 4.反射执行某个类的静态方法: xx::class.java.getDeclaredMethod(xx, xx::class.java)
+* 4.反射执行某个类的静态方法: 
+
+**xx::class.java.getDeclaredMethod(xx, xx::class.java)**
 
 ```kotlin
 Student::class.java.getDeclaredMethod("incrementTotalNumber", Int::class.java).run {
@@ -235,7 +243,9 @@ Student::class.java.getDeclaredMethod("incrementTotalNumber", Int::class.java).r
 }
 ```
 
-* 5.反射构建实例: xx::class.java.getDeclaredConstructor(xx::class.java...)
+* 5.反射构建实例: 
+
+**xx::class.java.getDeclaredConstructor(xx::class.java...)**
 
 ```kotlin
 Student::class.java.getDeclaredConstructor(Int::class.java, String::class.java).run {
