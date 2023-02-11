@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 xuexiangjys(xuexiangjys@163.com)
+ * Copyright (C) 2023 xuexiangjys(xuexiangjys@163.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,14 +18,34 @@
 package com.xuexiang.kotlinsample.fragment.basic.simplify
 
 /**
- * 拓展函数
+ * interface实例：
+ *
+ * object : xx {
+ *   override fun xxx(...) {
+ *
+ *   }
+ * }
  *
  * @author xuexiang
- * @since 2022/7/4 1:42 上午
+ * @since 2023/2/11 18:01
  */
-// 拓展string的方法，计算字符串的真实长度
-fun String.getRealLength() =
-    Regex("[^\\x00-\\xff]").replace(
-        this,
-        "**"
-    ).length
+
+interface IFilter {
+
+    fun onFilter(quality: Int): Boolean
+}
+
+class Food(var quality: Int) {
+
+    var name: String = ""
+
+    var filter: IFilter? = null
+}
+
+fun setFilter(food: Food) {
+    food.filter = object : IFilter {
+        override fun onFilter(quality: Int): Boolean {
+            return quality > 90
+        }
+    }
+}
